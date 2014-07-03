@@ -40,6 +40,16 @@ class Recipe
 		@title = new_title
 	end
 
+	def print_recipe
+		puts "Recipe Name: #{@title}"
+		puts "Recipe Ingredients: #{@ingredients.join(', ')}"
+		puts "Preparation Steps: "
+		@steps.each_with_index do |value, index|
+			puts "#{index+1}.  #{value}"
+		end
+	end
+
+
 end
 
 
@@ -63,3 +73,5 @@ p burrito.ingredients # ["tortilla", "tomatoes"]
 mex_cuisine.recipes # []
 mex_cuisine.add_recipe(burrito) #Added a recipe to the collection: Veggie Burrito
 p mex_cuisine.recipes # [#<Recipe:0x007f90bd219300 @title="Veggie Burrito", @ingredients=["tortilla", "tomatoes"], @steps=["heat tomatoes", "place tomatoes in tortilla", "roll up"]>]
+
+burrito.print_recipe
