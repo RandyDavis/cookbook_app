@@ -11,6 +11,17 @@ class Cookbook
 
 	def add_recipe(recipe)
 		@recipes.push(recipe)
+		puts "Added a recipe to the collection: #{recipe.title}"
+	end
+
+	def recipe_titles(recipe)
+		@recipes.each do |x|
+			puts "#{recipe.title}"
+		end
+	end
+
+	def recipe_ingredients(recipe)
+		puts "These are the ingredients for #{recipe.title}: #{recipe.ingredients}"
 	end
 end
 
@@ -50,5 +61,5 @@ p burrito.title # Veggie Burrito
 p burrito.ingredients # ["tortilla", "tomatoes"]
 
 mex_cuisine.recipes # []
-mex_cuisine.add_recipe(burrito)
+mex_cuisine.add_recipe(burrito) #Added a recipe to the collection: Veggie Burrito
 p mex_cuisine.recipes # [#<Recipe:0x007f90bd219300 @title="Veggie Burrito", @ingredients=["tortilla", "tomatoes"], @steps=["heat tomatoes", "place tomatoes in tortilla", "roll up"]>]

@@ -18,5 +18,8 @@ p burrito.title # Veggie Burrito
 p burrito.ingredients # ["tortilla", "tomatoes"]
 
 mex_cuisine.recipes # []
-mex_cuisine.add_recipe(burrito)
+mex_cuisine.add_recipe(burrito) # Added a recipe to the collection: Veggie Burrito
 p mex_cuisine.recipes # [#<Recipe:0x007f90bd219300 @title="Veggie Burrito", @ingredients=["tortilla", "tomatoes"], @steps=["heat tomatoes", "place tomatoes in tortilla", "roll up"]>]
+
+mex_cuisine.recipe_titles # Veggie Burrito
+mex_cuisine.recipe_ingredients # These are the ingredients for Veggie Burrito: ["tortilla", "tomatoes"]
