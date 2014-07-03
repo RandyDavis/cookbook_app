@@ -26,3 +26,5 @@ mex_cuisine.add_recipe(quesadilla) #Added a recipe to the collection: Cheese Que
 p mex_cuisine.recipes # [#<Recipe:0x007f90bd219300 @title="Veggie Burrito", @ingredients=["tortilla", "tomatoes"], @steps=["heat tomatoes", "place tomatoes in tortilla", "roll up"]>]
 
 burrito.print_recipe
+
+mex_cuisine.print_cookbook

@@ -23,6 +23,18 @@ class Cookbook
 	def recipe_ingredients(recipe)
 		puts "These are the ingredients for #{recipe.title}: #{recipe.ingredients}"
 	end
+
+	def print_cookbook
+		@recipes.each_with_index do |value, index|
+			puts " "
+			puts "#{index+1}. Recipe Name: #{value.title}"
+			puts "   Recipe Ingredients: #{value.ingredients.join(', ')}"
+			puts "   Steps:"
+			value.steps.each_with_index do |x, number|
+				puts "     #{number+1} - #{x}"
+			end
+		end
+	end
 end
 
 class Recipe
@@ -79,3 +91,5 @@ mex_cuisine.add_recipe(quesadilla)
 p mex_cuisine.recipes # [#<Recipe:0x007f90bd219300 @title="Veggie Burrito", @ingredients=["tortilla", "tomatoes"], @steps=["heat tomatoes", "place tomatoes in tortilla", "roll up"]>]
 
 burrito.print_recipe
+
+mex_cuisine.print_cookbook
