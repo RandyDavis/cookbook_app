@@ -28,3 +28,5 @@ p mex_cuisine.recipes # [#<Recipe:0x007f90bd219300 @title="Veggie Burrito", @ing
 burrito.print_recipe
 
 mex_cuisine.print_cookbook
+
+mex_cuisine.search(burrito)

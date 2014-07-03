@@ -1,5 +1,5 @@
 class Cookbook
-	attr_reader :recipes
+	attr_reader :recipes, :title
 	def initialize(title)
 		@title = title
 		@recipes = []
@@ -33,6 +33,17 @@ class Cookbook
 			value.steps.each_with_index do |x, number|
 				puts "     #{number+1} - #{x}"
 			end
+		end
+	end
+
+	def search(recipe)
+		puts "What recipe would you like to find? Enter recipe title."
+		search_item = gets.chomp
+		if recipe.title.include?(search_item)
+			puts "Here is the recipe for #{search_item}:"
+			puts "#{recipe.print_recipe}"
+		else
+			puts "Recipe not found.  Check back later."
 		end
 	end
 end
@@ -93,3 +104,5 @@ p mex_cuisine.recipes # [#<Recipe:0x007f90bd219300 @title="Veggie Burrito", @ing
 burrito.print_recipe
 
 mex_cuisine.print_cookbook
+
+mex_cuisine.search(burrito)
