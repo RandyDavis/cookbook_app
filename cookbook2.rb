@@ -1,5 +1,6 @@
 class Cookbook
-	attr_reader :recipes, :title
+	attr_reader :recipes
+	attr_accessor :title
 	def initialize(title)
 		@title = title
 		@recipes = []
@@ -36,14 +37,34 @@ class Cookbook
 		end
 	end
 
-	def search(recipe)
+	# The Long Way for the search method
+	# def search
+	# 	puts "What recipe would you like to find? Enter recipe title."
+	# 	search_item = gets.chomp
+		
+	# 	if @recipes.map { |recipe_obj| recipe_obj.title }.include?(search_item)
+	# 		@recipes.each do |x| 
+	# 			if x.title == search_item
+	# 				puts "Here is the recipe for #{search_item}:"
+	# 				x.print_recipe
+	# 			end
+	# 		end
+	# 	else
+	# 		puts "Recipe not found.  Check back later."
+	# 	end
+	# end
+
+	# The short way for the search method
+	def search
 		puts "What recipe would you like to find? Enter recipe title."
 		search_item = gets.chomp
-		if recipe.title.include?(search_item)
+
+		result = @recipes.find { |x| x.title == search_item }
+		if result
 			puts "Here is the recipe for #{search_item}:"
-			puts "#{recipe.print_recipe}"
+			result.print_recipe
 		else
-			puts "Recipe not found.  Check back later."
+			puts "Recipe not found."
 		end
 	end
 
@@ -58,8 +79,7 @@ end
 
 class Recipe
 	attr_reader :title
-	attr_writer :steps
-	attr_accessor :ingredients
+	attr_accessor :ingredients, :steps
 
 	def initialize(title, ingredients, steps)
 		@title = title

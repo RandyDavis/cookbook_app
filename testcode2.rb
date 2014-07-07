@@ -31,4 +31,4 @@ mex_cuisine.print_cookbook
 
 mex_cuisine.has_dairy(quesadilla)
 
-mex_cuisine.search(burrito)
+mex_cuisine.search
